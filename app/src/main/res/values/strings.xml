@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">protoX</string>
+    <string name="overflowmenu_0">menu0</string>
+    <string name="overflowmenu_1">menu1</string>
 </resources>

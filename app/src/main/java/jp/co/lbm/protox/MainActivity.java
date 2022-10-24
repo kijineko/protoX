@@ -1,11 +1,16 @@
 package jp.co.lbm.protox;
 
 import android.annotation.SuppressLint;
-import android.view.KeyEvent;
+import android.graphics.Color;
+import android.view.*;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +22,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setLogo(R.mipmap.ic_launcher);
+        toolbar.setTitle(R.string.app_name);
+        toolbar.setTitleTextColor(Color.WHITE);
+        setSupportActionBar(toolbar);
 
         // Web Viewの初期設定
         webView = findViewById(R.id.webView);
@@ -45,5 +57,35 @@ public class MainActivity extends AppCompatActivity {
             String url = webView.getUrl(); // 現在のウェブページを
             webView.loadUrl(url); // 再表示する
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_overflow, menu);
+        return true;
+//        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        boolean returnVal = true;
+        int itemId = item.getItemId();
+        switch (itemId) {
+            case R.id.overflowmenu_0:
+//                item.setOnMenuItemClickListener(new View.OnClickListener()) {
+//                    FragmentManager fragmentManager = getSupportFragmentManager();
+//                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                    fragmentTransaction.replace(R.id.c)
+//            }
+
+            case R.id.overflowmenu_1:
+                break;
+
+            default:
+                returnVal = false;
+                break;
+        }
+        return returnVal;
     }
 }
