@@ -1,6 +1,7 @@
 package jp.co.lbm.protox;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.*;
 import android.webkit.WebView;
@@ -73,11 +74,8 @@ public class MainActivity extends AppCompatActivity {
         int itemId = item.getItemId();
         switch (itemId) {
             case R.id.overflowmenu_0:
-//                item.setOnMenuItemClickListener(new View.OnClickListener()) {
-//                    FragmentManager fragmentManager = getSupportFragmentManager();
-//                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//                    fragmentTransaction.replace(R.id.c)
-//            }
+                Intent intent = new Intent(MainActivity.this, ConfigurationActivity.class);
+                startActivity(intent);
 
             case R.id.overflowmenu_1:
                 break;

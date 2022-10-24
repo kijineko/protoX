@@ -2,4 +2,6 @@
     <string name="app_name">protoX</string>
     <string name="overflowmenu_0">menu0</string>
     <string name="overflowmenu_1">menu1</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
